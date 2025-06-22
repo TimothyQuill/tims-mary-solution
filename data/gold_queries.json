@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "question": "Which Virginia discovery rule places no numerical cap on Requests for Admission about document authenticity?",
+            "answer": "15 additional interrogatories on 10 January 2022.",
+            "pages": [
+                3
+            ]
+        },
+        {
+            "question": "Under the definition of inventory regarding computers, name two technical items that must be identified besides the computer's make and model.",
+            "answer": "(i) the make/type of write-blocker used, and (ii) whether a hash verification was completed for each file and for the image as a whole.",
+            "pages": [
+                171
+            ]
+        },
+        {
+            "question": "Give two lawsuits listed under \"Other Litigation\" against Mr Depp and their informal labels.",
+            "answer": "- Eugene Arreola & Miguel Sanchez v. Depp: commonly referred to as the \"security guard case\"\n- Gregg \"Rocky\" Brooks v. Depp: commonly referred to as the \"movie-set assault case\"",
+            "pages": [
+                284
+            ]
+        },
+        {
+            "question": "On what dates were Ms Heard's Nineteenth and Twentieth Sets of Requests for Production of Documents served?",
+            "answer": "Nineteenth Set: 10 January 2022\nTwentieth Set: 2 February 2022",
+            "pages": [
+                331, 421
+            ]
+        }
+    ]
+}
