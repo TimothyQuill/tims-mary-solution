@@ -1,0 +1,2 @@
+openai~=1.91.0
+google-genai~=1.21.1
