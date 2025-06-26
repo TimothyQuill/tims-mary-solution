@@ -37,7 +37,7 @@ class DataGenerator:
             })
 
     def extract_label(self, row_n:int, output:str) -> None:
-        """Extract all queries from the model output"""
+        """Extract the label from the model output"""
         chain_of_thought, _ = output.split("<<S>>")
         search_method = utils.extract_text(output, "S")[0]
         query = utils.extract_text(output, "Q")[0]
@@ -56,7 +56,7 @@ class DataGenerator:
             self.extract_queries(output, i)
 
     def generate_labels(self) -> None:
-        """Generates a list of queries"""
+        """Generates a list of labels"""
         for row_n in range(len(self.dataset)):
             prompt = prompts["generate-label"].format(
                 self.dataset[row_n]["query"],
@@ -68,6 +68,7 @@ class DataGenerator:
             self.dataset[row_n].pop("chunk_n")
 
     def generate(self) -> None:
+        """Orchestrates the synthetic data generation process"""
         self.generate_queries()
         self.generate_labels()
         utils.export_to_jsonl(self.dataset)
