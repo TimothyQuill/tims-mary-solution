@@ -20,7 +20,6 @@ def cool_off(func, arg1, arg2, arg3, arg4):
             return result
 
 
-
 def export_to_jsonl(data:list[dict], filename:str="dataset.jsonl") -> None:
     with open(filename, 'w', encoding='utf-8') as f:
         for entry in data:
