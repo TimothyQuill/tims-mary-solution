@@ -6,7 +6,7 @@ prompts = {
     "generate-query":
         """
             Instruction:
-            Given the following legal document, generate 3 unique and content-specific questions that a user might ask after reading it.
+            Given the following legal document, generate 10 unique and content-specific questions that a user might ask after reading it.
             
             Guidelines:
             - All questions must be directly grounded in the **actual content** of the document.
