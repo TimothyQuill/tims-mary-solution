@@ -22,10 +22,10 @@ Before I start coding, there's a few unique challenges that need to be considere
     best estimation of how the search methods would perform.
 
 4. Whilst the question/label structure of the data needs to be maintained, it's worth 
-    considering how I can add additional custom fields I can add in order to 
+    considering how I can add additional custom fields in order to 
     maximise the amount of information for the model to learn on.
 
-I've made a few assumptions about the data, which in a professional capacity would need to be cleared up.
+I've made a few assumptions about the data, which in a real-world scenario would need to be cleared up.
 
 1. The goal of the data is to generalise to unseen documents, not the ones they're trained on.
 2. The documents are open-source, and don't require any omissions, changes or redactions.
@@ -33,13 +33,13 @@ I've made a few assumptions about the data, which in a professional capacity wou
 4. All provided legal documents will be complete and intact. 
 5. The OCR generated will be of high quality with no errors.
 
-My methodology
+# My methodology
 
-# Handling large files.
+## Handling large files.
     
-    When preparing my solution, I considered the following options:
+When preparing my solution, I considered the following options:
 
-   1. Use a model with a large context window (e.g. GPT-4.1-mini has a 1M token context window).
+   1. Use a model with a large context window (e.g. Gemini 2.5 Flash has a 1M token context window).
     While this solves the problem, is does feel a tiny bit like cheating, as our model should be
     robust enough to handle unseen documents, some of which will likely be above 1M tokens.
 
@@ -54,11 +54,10 @@ My methodology
 
    4. RAG system. This method would introduce the exact problem we're trying to solve, so screw that.
 
-    Ultimately I decided the go with Gemini 2.5 Flash and introduce a chunking method that is activated
-    when the input text is too large. Whilst it's not super ideal, it seems to be the best of the
-    given options.
+Ultimately I decided the go with GPT-4.1-mini Flash and introduce a chunking method to break down large chunks. 
+Whilst it's not super ideal, it seems to be the best of the given options.
     
-# Quality of queries
+## Quality of queries
 I tried to enforce quality in the queries by clearly outlining a set of guidelines for the model in the prompt.
 I also tried to enforce diversity through the following methods:
 * The temperature was turned up quite high, to promote a higher range of tokens. 
@@ -70,17 +69,17 @@ I also tried to enforce diversity through the following methods:
     The logic for this is that a model is more likely to consider what has already been asked
     if they just generated the output.
 
-# Quality of labels
+## Quality of labels
 To ensure the best quality of the labels, I did the following:
 * Reduced the temperature to 0, so that it minimised the likelihood of any noise in the output.
 * Promoted chain-of-thought reasoning, so that the model could analyse its decisions.
 
-# Additional fields
+## Additional fields
 I chose to include the chain-of-thought from each label generation to assist with finetuning
 the model. The greater the context, the better it will be for the model to learn what actions to
 take.
 
-## Extensions
+# Extensions
 
 1. Lots of exception catches, and unit tests to ensure quality and consistency.
 
